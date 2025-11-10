@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+import image1 from "../assets/images/hero.png";
+---
+
+<div class="relative mx-auto max-w-7xl bg-black pb-20 pt-32">
+	<div class="relative m-auto px-6 md:px-12 lg:px-6 xl:container">
+		<h1
+			class="text-center font-heading text-4xl font-black text-white sm:mx-auto sm:w-10/12 sm:text-5xl md:w-2/3 md:text-6xl lg:w-auto lg:text-left xl:text-7xl"
+		>
+			Quality Electronics. <br class="hidden lg:block" />
+			<span class="relative text-gradient-purple-glow"
+				>Unbeatable Value</span
+			>
+		</h1>
+		<div class="lg:flex">
+			<div
+				class="relative mt-8 space-y-8 text-center sm:mx-auto sm:w-10/12 md:mt-16 md:w-2/3 lg:mr-auto lg:ml-0 lg:w-7/12 lg:text-left"
+			>
+				<p class="text-gray-300 md:text-lg lg:w-10/12">
+					In the fast-evolving world of consumer electronics, <span
+						class="font-semibold">Vylectro Limited,</span
+					> has quickly proven to be a dependable mainstay in wholesale
+					and retail. We take pride in supplying a meticulously curated
+					selection
+				</p>
+				<span
+					class="block font-semibold text-purple-300 md:text-lg lg:w-10/12"
+					>Our mission is to provide a rich portfolio of spectacular,
+					next-generation electronic products.</span
+				>
+			</div>
+			<div class="-right-10 mt-12 md:mt-0 lg:absolute lg:w-7/12">
+				<div class="relative w-full">
+					<div
+						aria-hidden="true"
+						class="absolute inset-0 m-auto h-full w-full scale-75 rotate-45 rounded-full bg-gradient-to-r from-indigo-500 to-indigo-300 blur-3xl md:h-96 md:w-96 md:scale-120"
+					>
+					</div>
+					<Image
+						src={image1}
+						class="relative w-4/5 ml-12 lg:ml-20"
+						alt="wath illustration"
+						loading="eager"
+					/>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

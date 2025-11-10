@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: var(--font-roboto-mono), monospace;
+  --font-sans: var(--font-roboto), sans-serif;
+  --animate-slide-left-infinite: slide-left 15s linear infinite;
+  --color-purple: #9f46f1;
+
+  /* Purple gradient utilities */
+  --gradient-purple-hero: linear-gradient(135deg, #9333ea 0%, #7c3aed 25%, #6d28d9 50%, #7c3aed 75%, #9333ea 100%);
+  --gradient-purple-soft: linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(124, 58, 237, 0.15) 50%, rgba(109, 40, 217, 0.1) 100%);
+  --gradient-purple-glow: linear-gradient(135deg, #9333ea 0%, #a855f7 50%, #9333ea 100%);
+  --gradient-purple-white: linear-gradient(135deg, #ffffff 0%, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%, #ffffff 100%);
+  --gradient-button-primary: linear-gradient(135deg, #9333ea 0%, #7c3aed 50%, #6d28d9 100%);
+  --gradient-button-hover: linear-gradient(135deg, #7c3aed 0%, #6d28d9 50%, #9333ea 100%);
+
+
+  @keyframes slide-left {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+a:not(.btn) {
+  cursor: pointer;
+  text-decoration: none;
+  text-underline-offset: 1px;
+  transition: text-decoration-color 0.4s ease, text-underline-offset 0.4s ease;
+}
+
+a:not(.btn):hover {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+p {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 1.25rem;
+    margin: 0 1rem 1rem 0;
+  }
+}
+
+/* Tailwind v4 Text Gradients - Kyle Goggin's Approach */
+@layer components {
+  .text-gradient-purple-glow {
+    background-image: linear-gradient(135deg, #9333ea 0%, #a855f7 50%, #9333ea 100%);
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
+
+  .text-gradient-indigo-glow {
+    background-image: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #4f46e5 100%);
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
+
+  .text-gradient-purple-hero {
+    background-image: linear-gradient(135deg, #9333ea 0%, #7c3aed 25%, #6d28d9 50%, #7c3aed 75%, #9333ea 100%);
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
+}
+
+/* Functional utilities for dynamic gradients */
+@utility text-gradient-* {
+  background-image: linear-gradient(--tw-gradient-stops);
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Background gradients */
+.bg-gradient-purple-soft {
+  background: var(--gradient-purple-soft);
+}
+
+.bg-gradient-button-primary {
+  background: var(--gradient-button-primary);
+}
+
+.bg-gradient-button-hover {
+  background: var(--gradient-button-hover);
+}
+
+.bg-purple-gradient-glow {
+  background-image: linear-gradient(135deg, #9333ea 0%, #a855f7 50%, #9333ea 100%);
+}
+
+/* Fix for linear gradients - ensure they work with Tailwind */
+.bg-linear-to-r {
+  background: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.bg-linear-to-br {
+  background: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.bg-linear-to-tr {
+  background: linear-gradient(to top right, var(--tw-gradient-stops));
+}
+
+.bg-linear-to-t {
+  background: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+/* Glowing effects */
+.glow-purple {
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.3), 0 0 40px rgba(147, 51, 234, 0.2);
+}
+
+.glow-purple-strong {
+  box-shadow: 0 0 30px rgba(147, 51, 234, 0.5), 0 0 60px rgba(147, 51, 234, 0.3);
+}
+
+.border-gradient-purple {
+  background: linear-gradient(#000000, #000000) padding-box,
+    var(--gradient-purple-glow) border-box;
+  border: 2px solid transparent;
+}

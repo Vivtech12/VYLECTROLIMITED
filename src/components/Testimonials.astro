@@ -1,0 +1,211 @@
+<link
+	href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css"
+	rel="stylesheet"
+/>
+
+<script is:inline type="module">
+	import KeenSlider from "https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm";
+
+	const keenSlider = new KeenSlider(
+		"#keen-slider",
+		{
+			loop: true,
+			slides: {
+				origin: "center",
+				perView: 1.25,
+				spacing: 16,
+			},
+			breakpoints: {
+				"(min-width: 1024px)": {
+					slides: {
+						origin: "auto",
+						perView: 3,
+						spacing: 32,
+					},
+				},
+			},
+		},
+		[],
+	);
+
+	const keenSliderPrevious = document.getElementById("keen-slider-previous");
+	const keenSliderNext = document.getElementById("keen-slider-next");
+
+	keenSliderPrevious.addEventListener("click", () => keenSlider.prev());
+	keenSliderNext.addEventListener("click", () => keenSlider.next());
+</script>
+
+<section
+	id="testimonials"
+	class="relative py-20 lg:py-32 bg-black bg-gradient-purple-soft"
+>
+	<div class="floating-shapes">
+		<div class="floating-shape"></div>
+		<div class="floating-shape"></div>
+		<div class="floating-shape"></div>
+	</div>
+
+	<div class="container mx-auto max-w-7xl px-4">
+		<!-- Header Section -->
+		<div class="mb-16 text-center">
+			<div
+				class="mb-6 w-fit mx-auto items-center rounded-full border border-purple-500 bg-gray-900 px-6 py-2 shadow-lg glow-purple"
+			>
+				<span
+					class="text-sm font-medium tracking-wider text-gray-300 uppercase"
+				>
+					Testimonials</span
+				>
+			</div>
+			<h2
+				class="mb-6 text-5xl leading-tight font-bold text-white lg:text-5xl text-gradient-purple-glow"
+			>
+				Trusted by
+				<span class="block text-gradient-purple-glow text-transparent">
+					Industry Leaders
+				</span>
+			</h2>
+		</div>
+
+		<!-- Navigation -->
+		<div class="mb-12 flex justify-center gap-4">
+			<button
+				id="keen-slider-previous"
+				class="nav-button"
+				aria-label="Previous testimonial"
+			>
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path d="m15 18-6-6 6-6"></path>
+				</svg>
+			</button>
+
+			<button
+				id="keen-slider-next"
+				class="nav-button"
+				aria-label="Next testimonial"
+			>
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path d="m9 18 6-6-6-6"></path>
+				</svg>
+			</button>
+		</div>
+
+		<!-- Testimonials Slider -->
+		<div id="keen-slider" class="keen-slider">
+			<!-- Testimonial 1 -->
+			<div class="keen-slider__slide">
+				<div
+					class="testimonial-card relative h-full rounded-3xl bg-gray-900 border border-purple-500 p-4 lg:p-12 glow-purple"
+				>
+					<div class="relative z-10">
+						<div class="rating-container">
+							<div class="flex">
+								<span class="text-3xl">⭐⭐⭐⭐⭐</span>
+							</div>
+						</div>
+
+						<h3
+							class="mt-4 mb-6 min-h-[3lh] text-2xl leading-tight font-bold text-white lg:text-3xl"
+						>
+							Outstanding electronics distribution partner
+						</h3>
+
+						<p
+							class="m-0! mb-8! text-lg leading-relaxed text-gray-300"
+						>
+							"Vylectro has transformed our electronics sourcing
+							strategy. Their product quality is exceptional,
+							delivery times are always met, and their pricing
+							structure gives us a competitive edge in the market.
+							Truly a game-changer for our business."
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Testimonial 2 -->
+			<div class="keen-slider__slide">
+				<div
+					class="testimonial-card relative h-full rounded-3xl bg-gray-900 border border-purple-500 p-4 lg:p-12 glow-purple"
+				>
+					<div class="relative z-10">
+						<div class="rating-container">
+							<div class="flex">
+								<span class="text-3xl">⭐⭐⭐⭐⭐</span>
+							</div>
+						</div>
+
+						<h3
+							class="mt-4 mb-6 min-h-[3lh] text-2xl leading-tight font-bold text-white lg:text-3xl"
+						>
+							Premium quality and reliable service
+						</h3>
+
+						<p
+							class="m-0! mb-8! text-lg leading-relaxed text-gray-300"
+						>
+							"The product range is impressive and the quality
+							control is second to none. We've been working with
+							Vylectro for over two years and they consistently
+							exceed our expectations. Highly recommended for any
+							business seeking excellence."
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Testimonial 3 -->
+			<div class="keen-slider__slide">
+				<div
+					class="testimonial-card relative h-full rounded-3xl bg-gray-900 border border-purple-500 p-4 lg:p-12 glow-purple"
+				>
+					<div class="relative z-10">
+						<div class="rating-container">
+							<div class="flex">
+								<span class="text-3xl">⭐⭐⭐⭐⭐</span>
+							</div>
+						</div>
+
+						<h3
+							class="mt-4 mb-6 min-h-[3lh] text-2xl leading-tight font-bold text-white lg:text-3xl"
+						>
+							Fast delivery and competitive pricing
+						</h3>
+
+						<p
+							class="m-0! mb-8! text-lg leading-relaxed text-gray-300"
+						>
+							"What sets Vylectro apart is their commitment to
+							customer success. They understand our needs and
+							always deliver the right solutions on time. The
+							pricing is competitive and the service is
+							exceptional. A truly reliable partner."
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div
+		class="w-screen h-40 lg:h-60 bg-gradient-to-b from-transparent via-[#0f071d]/30 to-black absolute bottom-0 left-0"
+	>
+	</div>
+</section>
