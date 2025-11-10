@@ -1,0 +1,224 @@
+---
+import Button from "./reusable/Button.astro";
+import { Icon } from "astro-icon/components";
+
+const menu = [
+	{
+		Home: {
+			link: "/",
+		},
+	},
+	{
+		"About Us": {
+			link: "/#about",
+		},
+	},
+	{
+		Clients: {
+			link: "/#testimonials",
+		},
+	},
+];
+---
+
+<header
+	class="absolute top-0 z-999 w-screen bg-black/90 backdrop-blur-lg transition-transform duration-1000 ease-in-out lg:sticky lg:bg-black/90"
+>
+	<nav
+		class="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between px-4 py-2 text-lg text-gray-300 lg:py-0"
+	>
+		<div class="z-50">
+			<a href="/" class="flex items-center gap-2 btn">
+				<Icon name="logo" class="h-auto w-12" />
+				<p class="pt-2 font-bold text-white">
+					Vylectro <br /> Limited
+				</p>
+			</a>
+		</div>
+		<div class="lg:hidden">
+			<div
+				id="hamburgerToggle"
+				aria-label="Toggle Hamburger Menu"
+				class="group relative mx-2.5 mb-1"
+			>
+				<div
+					class="ring-opacity-30 relative flex h-10 w-10 transform items-center justify-end overflow-hidden ring-0 ring-gray-300 transition-all duration-200"
+				>
+					<div
+						class="flex h-[25px] w-[25px] origin-center transform flex-col justify-between overflow-hidden transition-all duration-300"
+					>
+						<div
+							class="h-[3px] w-9 origin-left transform bg-white transition-all delay-100 duration-300 group-aria-expanded:translate-y-7"
+						>
+						</div>
+						<div
+							class="h-[3px] w-9 transform rounded bg-white transition-all delay-75 duration-300 group-aria-expanded:translate-y-6"
+						>
+						</div>
+						<div
+							class="h-[3px] w-9 origin-left transform bg-white transition-all duration-300 group-aria-expanded:translate-y-6"
+						>
+						</div>
+
+						<div
+							class="absolute top-5 flex w-0 -translate-x-12 transform items-center justify-between transition-all duration-600 group-aria-expanded:w-12 group-aria-expanded:translate-x-0"
+						>
+							<div
+								class="absolute h-[3px] w-7 rotate-0 transform bg-white transition-all delay-300 duration-600 group-aria-expanded:rotate-45"
+							>
+							</div>
+							<div
+								class="absolute h-[3px] w-7 rotate-0 transform bg-white transition-all delay-300 duration-600 group-aria-expanded:-rotate-45"
+							>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div
+			class="absolute top-16 left-0 z-999 hidden w-screen translate-x-full bg-black transition-all duration-500 ease-in-out lg:static lg:flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:bg-none lg:shadow-none"
+			id="menu"
+		>
+			<ul
+				class="mx-auto flex h-screen lg:h-fit w-full max-w-6xl flex-col items-center justify-center lg:justify-evenly gap-2 px-2 pb-4 lg:flex-row lg:pb-0 xl:gap-4"
+			>
+				{
+					menu.map((item) => (
+						<li class="menu group relative cursor-pointer py-2">
+							<div class="flex items-center justify-center space-x-2 px-2 lg:justify-between xl:px-4">
+								<a
+									href={Object.values(item)[0].link}
+									class="text-heading item my-2 py-2 text-lg font-bold tracking-wide text-white transition duration-300 ease-in-out hover:text-indigo-300"
+								>
+									{Object.keys(item)}
+								</a>
+							</div>
+						</li>
+					))
+				}
+				<li class="my-4 lg:my-0">
+					<Button
+						variant="outlined"
+						buttonText="Contact"
+						link="/contact"
+						width="w-28"
+					/>
+				</li>
+				<li class="my-4 lg:my-0">
+					<Button
+						variant="primary"
+						buttonText="Sign Up"
+						link="/signup"
+						width="w-28"
+					/>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+<script>
+	// Scroll behavior
+	const handleScroll = () => {
+		let lastScrollPosition = 0;
+		const navbar = document.querySelector("header");
+		const hamburgerToggle = document.getElementById("hamburgerToggle")!;
+
+		window.addEventListener("scroll", function () {
+			const currentScrollPosition = window.scrollY;
+			if (
+				currentScrollPosition > lastScrollPosition &&
+				currentScrollPosition > 10
+			) {
+				navbar!.style.transform = "translateY(-100%)";
+				hamburgerToggle.setAttribute("aria-expanded", String(false));
+			} else {
+				navbar!.style.transform = "translateY(0)";
+			}
+
+			lastScrollPosition = currentScrollPosition;
+		});
+	};
+
+	// Scroll lock functionality for mobile
+	const disableScroll = () => {
+		document.body.style.overflow = "hidden";
+		document.body.style.position = "fixed";
+		document.body.style.width = "100%";
+		document.body.style.top = `-${window.scrollY}px`;
+	};
+
+	const enableScroll = () => {
+		const scrollY = document.body.style.top;
+		document.body.style.overflow = "";
+		document.body.style.position = "";
+		document.body.style.width = "";
+		document.body.style.top = "";
+		if (scrollY) {
+			window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
+		}
+	};
+
+	const isMobileScreen = () => {
+		return window.innerWidth < 640;
+	};
+
+	document.addEventListener("astro:page-load", () => {
+		document
+			.getElementById("hamburgerToggle")!
+			.addEventListener("click", () => {
+				const hamburgerToggle =
+					document.getElementById("hamburgerToggle")!;
+				const menu = document.getElementById("menu")!;
+				const isExpanded =
+					hamburgerToggle.getAttribute("aria-expanded") === "true";
+
+				if (isExpanded) {
+					menu.classList.add("translate-x-full");
+					if (isMobileScreen()) {
+						enableScroll();
+					}
+					setTimeout(() => {
+						menu.classList.add("hidden");
+					}, 200);
+				} else {
+					menu.classList.remove("hidden");
+					setTimeout(() => {
+						menu.classList.remove("translate-x-full");
+					}, 200);
+					if (isMobileScreen()) {
+						disableScroll();
+					}
+				}
+
+				hamburgerToggle.setAttribute(
+					"aria-expanded",
+					String(!isExpanded),
+				);
+			});
+
+		// Handle window resize to restore scroll if going from mobile to desktop
+		let resizeTimer: NodeJS.Timeout;
+		window.addEventListener("resize", () => {
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(() => {
+				const hamburgerToggle = document.getElementById("hamburgerToggle")!;
+				const isExpanded = hamburgerToggle.getAttribute("aria-expanded") === "true";
+
+				// If menu is open and screen is now larger than mobile, restore scroll
+				if (isExpanded && !isMobileScreen()) {
+					enableScroll();
+				}
+				// If menu is open and screen is now mobile, disable scroll
+				else if (isExpanded && isMobileScreen()) {
+					disableScroll();
+				}
+			}, 250);
+		});
+
+		if (window.screen.width > 1024) {
+			handleScroll();
+		}
+	});
+</script>

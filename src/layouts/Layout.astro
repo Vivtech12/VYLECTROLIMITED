@@ -1,0 +1,48 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+import { ClientRouter } from "astro:transitions";
+
+import "../styles/global.css";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts.ts";
+let path = Astro.url.pathname;
+const { metaTitle, metaDescription, metaImage } = Astro.props;
+
+let title = "";
+if (path === "/" || path === "/en/") {
+	title = `Home | ${SITE_TITLE}`;
+} else {
+	title = metaTitle
+		? `${metaTitle} | ${SITE_TITLE}`.trim()
+		: path
+				.split("-")
+				.map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+				.join(" ")
+				.split("/")
+				.map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+				.filter((p) => p !== "")
+				.join(" | ")
+				.replaceAll("%20", " ") +
+			" | " +
+			SITE_TITLE.trim();
+}
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth!">
+	<head>
+		<BaseHead
+			metaTitle={title || SITE_TITLE}
+			metaDescription={metaDescription || SITE_DESCRIPTION}
+			metaImage={metaImage}
+		/>
+		<ClientRouter />
+	</head>
+	<body class="overflow-x-hidden font-sans bg-black text-white" style="font-family: var(--font-roboto), sans-serif;">
+		<Navbar />
+		<slot />
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,146 @@
+---
+import { Image } from "astro:assets";
+import about from "../assets/images/about.jpg";
+---
+
+<!-- redesigned component -->
+<section
+	id="about"
+	class="relative min-h-screen overflow-hidden bg-linear-to-b from-black to-[#11071e]"
+>
+	<div class="relative z-10 container mx-auto max-w-6xl px-8 py-20">
+		<!-- Header with centered approach -->
+		<div class="mb-16 text-center">
+			<h2
+				class="text-gradient-purple-glow text-5xl leading-tight font-bold md:text-6xl font-heading"
+			>
+				About Us
+			</h2>
+		</div>
+
+		<div class="grid items-center gap-16 lg:grid-cols-2">
+			<div
+				data-aos="fade-up"
+				data-aos-offset="150"
+				data-aos-delay="100"
+				data-aos-duration="800"
+				class="space-y-8"
+			>
+				<div class="mb-8 grid grid-cols-2 gap-4">
+					<div
+						class="rounded-xl border border-gray-700 bg-gray-800/50 p-4 backdrop-blur-sm"
+					>
+						<div
+							class="text-2xl font-bold text-gradient-purple-glow"
+						>
+							1000+
+						</div>
+						<div class="text-sm text-gray-300">Products</div>
+					</div>
+					<div
+						class="rounded-xl border border-gray-700 bg-gray-800/50 p-4 backdrop-blur-sm"
+					>
+						<div
+							class="text-2xl font-bold text-gradient-purple-glow"
+						>
+							UK
+						</div>
+						<div class="text-sm text-gray-300">Coverage</div>
+					</div>
+				</div>
+				<div class="space-y-6">
+					<p class="text-xl leading-relaxed font-light text-gray-100">
+						Your trusted partner for cutting-edge electronics and
+						technology solutions across the United Kingdom and
+						beyond.
+					</p>
+					<p class="leading-relaxed text-gray-300">
+						We specialize in premium electronic distribution with
+						unbeatable pricing and strong manufacturer partnerships.
+						Whether you need bulk enterprise solutions or personal
+						technology products, Vylectro Limited delivers
+						excellence and reliability in every transaction.
+					</p>
+				</div>
+				<div class="grid grid-cols-1 gap-4 pt-6 sm:grid-cols-2">
+					<div class="flex items-center gap-3">
+						<div
+							class="h-2 w-2 animate-pulse rounded-full bg-indigo-400"
+						>
+						</div>
+						<span class="text-sm text-gray-200">Expert Support</span
+						>
+					</div>
+					<div class="flex items-center gap-3">
+						<div
+							class="h-2 w-2 animate-pulse rounded-full bg-purple-400"
+							style="animation-delay: 0.5s"
+						>
+						</div>
+						<span class="text-sm text-gray-200">Fast Delivery</span>
+					</div>
+					<div class="flex items-center gap-3">
+						<div
+							class="h-2 w-2 animate-pulse rounded-full bg-indigo-400"
+							style="animation-delay: 1s"
+						>
+						</div>
+						<span class="text-sm text-gray-200">Best Prices</span>
+					</div>
+					<div class="flex items-center gap-3">
+						<div
+							class="h-2 w-2 animate-pulse rounded-full bg-purple-400"
+							style="animation-delay: 1.5s"
+						>
+						</div>
+						<span class="text-sm text-gray-200"
+							>Quality Guaranteed</span
+						>
+					</div>
+				</div>
+			</div>
+
+			<!-- Image side with enhanced styling -->
+			<div
+				data-aos="fade-left"
+				data-aos-offset="150"
+				data-aos-delay="200"
+				data-aos-duration="800"
+				class="relative"
+			>
+				<div class="group relative">
+					<!-- Decorative elements -->
+					<div
+						class="absolute -inset-4 rounded-2xl bg-linear-to-r from-indigo-500/30 to-indigo-300/30 blur-xl transition-all duration-300 group-hover:blur-2xl"
+					>
+					</div>
+					<div
+						class="absolute top-4 left-4 h-20 w-20 rounded-full bg-linear-to-r from-indigo-500/50 to-indigo-300/50 blur-xl"
+					>
+					</div>
+					<div
+						class="absolute right-4 bottom-4 h-32 w-32 rounded-full bg-linear-to-rrom-indigo-500/50 to-indigo-300/50 blur-xl"
+					>
+					</div>
+
+					<!-- Main image container -->
+					<div
+						class="relative rounded-2xl border border-gray-700 bg-gray-800/50 p-2 backdrop-blur-sm"
+					>
+						<Image
+							class="h-80 w-full rounded-xl object-cover shadow-2xl lg:h-96"
+							src={about}
+							alt="Electronic products showcase"
+						/>
+
+						<!-- Overlay gradient -->
+						<div
+							class="pointer-events-none absolute inset-2 rounded-xl bg-linear-to-t from-black/20 via-transparent to-transparent"
+						>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

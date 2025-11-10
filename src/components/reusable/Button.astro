@@ -1,0 +1,33 @@
+---
+interface Props {
+	variant?: "primary" | "outlined";
+	class?: string;
+	buttonText: string;
+	link: string;
+	width: string;
+}
+
+const {
+	variant = "primary",
+	class: className,
+	buttonText,
+	link,
+	width,
+	...rest
+} = Astro.props;
+const baseClasses = `btn whitespace-no-wrap inline-flex items-center justify-center rounded-md border px-4 py-2 text-base font-medium leading-6 shadow-sm focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-offset-0 ${
+	width ? width : "w-full"
+}`;
+
+const variantClasses = {
+	primary: "border-indigo-200 bg-purple text-white hover:bg-indigo-400",
+	outlined:
+		"border-indigo-200 bg-transparent text-indigo-200 hover:bg-indigo-400 hover:text-white",
+};
+
+const classes = `${baseClasses} ${variantClasses[variant]} ${className || ""}`;
+---
+
+<a href={link} class={classes} {...rest}>
+	{buttonText}
+</a>

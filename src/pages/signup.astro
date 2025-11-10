@@ -1,0 +1,241 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+	<main id="MainContent">
+		<section
+			class="flex min-h-screen w-screen flex-col justify-start bg-black px-4 py-6"
+		>
+			<div class="relative py-10 sm:mx-auto sm:max-w-2xl sm:py-3">
+				<div
+					class="relative mt-4 rounded-3xl bg-gray-900 px-4 shadow-lg sm:px-20"
+				>
+					<div class="mx-auto">
+						<div class="divide-y divide-gray-600">
+							<div
+								class="space-y-4 py-8 text-base leading-6 text-gray-300 sm:text-lg sm:leading-7"
+							>
+								<h1
+									class="mb-8 text-2xl font-bold text-white"
+								>
+									Account Application Form
+								</h1>
+								<form
+									class="space-y-8"
+									action="https://submit-form.com/T7lIp1tuy"
+								>
+									{/* Personal Information Card */}
+									<div
+										class="rounded-lg border border-gray-600 bg-gray-800 p-6"
+									>
+										<h2
+											class="mb-6 border-b border-gray-600 pb-2 text-xl font-semibold text-white"
+										>
+											Personal Information
+										</h2>
+										<div class="grid gap-6 md:grid-cols-2">
+											<div>
+												<label
+													for="fullName"
+													class="mb-2 block text-sm font-medium text-gray-300"
+												>
+													Full Name *
+												</label>
+												<input
+													type="text"
+													id="fullName"
+													name="fullName"
+													required
+													class="w-full rounded-lg border border-indigo-400 px-4 py-3 text-base text-white transition-colors focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:outline-none bg-gray-700"
+													placeholder="Enter your full name"
+												/>
+											</div>
+
+											<div>
+												<label
+													for="email"
+													class="mb-2 block text-sm font-medium text-gray-300"
+												>
+													Email Address *
+												</label>
+												<input
+													type="email"
+													id="email"
+													name="email"
+													required
+													class="w-full rounded-lg border border-indigo-400 px-4 py-3 text-base text-white transition-colors focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:outline-none bg-gray-700"
+													placeholder="your.email@example.com"
+												/>
+											</div>
+
+											<div class="md:col-span-2">
+												<label
+													for="phone"
+													class="mb-2 block text-sm font-medium text-gray-300"
+												>
+													Phone Number *
+												</label>
+												<input
+													type="tel"
+													id="phone"
+													name="phone"
+													required
+													class="w-full rounded-lg border border-indigo-400 px-4 py-3 text-base text-white transition-colors focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:outline-none bg-gray-700"
+													placeholder="+1 (555) 123-4567"
+												/>
+											</div>
+										</div>
+									</div>
+
+									{/* Business Information Card */}
+									<div
+										class="rounded-lg border border-gray-600 bg-gray-800 p-6"
+									>
+										<h2
+											class="mb-6 border-b border-gray-600 pb-2 text-xl font-semibold text-white"
+										>
+											Business Information
+										</h2>
+										<div class="space-y-6">
+											<div
+												class="grid gap-6 md:grid-cols-2"
+											>
+												<div>
+													<label
+														for="companyName"
+														class="mb-2 block text-sm font-medium text-gray-300"
+													>
+														Company Name
+													</label>
+													<input
+														type="text"
+														id="companyName"
+														name="companyName"
+														class="w-full rounded-lg border border-indigo-400 px-4 py-3 text-base text-white transition-colors focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:outline-none bg-gray-700"
+														placeholder="Your company name (optional)"
+													/>
+												</div>
+
+												<div>
+													<label
+														for="vatNumber"
+														class="mb-2 block text-sm font-medium text-gray-300"
+													>
+														VAT Number
+													</label>
+													<input
+														type="text"
+														id="vatNumber"
+														name="vatNumber"
+														class="w-full rounded-lg border border-indigo-400 px-4 py-3 text-base text-white transition-colors focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:outline-none bg-gray-700"
+														placeholder="VAT123456789 (optional)"
+													/>
+												</div>
+											</div>
+
+											<div>
+												<label
+													for="accountType"
+													class="mb-2 block text-sm font-medium text-gray-300"
+												>
+													Account Type *
+												</label>
+												<select
+													id="accountType"
+													name="accountType"
+													required
+													class="w-full rounded-lg border border-indigo-400 px-4 py-3 text-base text-white transition-colors focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:outline-none bg-gray-700"
+												>
+													<option value=""
+														>Select account type</option
+													>
+													<option value="individual"
+														>Individual</option
+													>
+													<option value="business"
+														>Business</option
+													>
+													<option value="enterprise"
+														>Enterprise</option
+													>
+												</select>
+											</div>
+										</div>
+									</div>
+
+									{/* Additional Information */}
+									<div
+										class="rounded-lg border border-gray-600 bg-gray-800 p-6"
+									>
+										<h2
+											class="mb-6 border-b border-gray-600 pb-2 text-xl font-semibold text-white"
+										>
+											Additional Information
+										</h2>
+										<div>
+											<label
+												for="message"
+												class="mb-2 block text-sm font-medium text-gray-300"
+											>
+												Tell us more about your needs
+											</label>
+											<textarea
+												id="message"
+												name="message"
+												rows={5}
+												class="resize-vertical w-full rounded-lg border border-indigo-400 px-4 py-3 text-base text-white transition-colors focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:outline-none bg-gray-700"
+												placeholder="Please provide any additional information that might help us process your application..."
+											></textarea>
+										</div>
+									</div>
+
+									{/* Terms and Submit */}
+									<div class="space-y-4">
+										<div class="flex items-start space-x-3">
+											<input
+												type="checkbox"
+												id="terms"
+												name="terms"
+												required
+												class="mt-1 h-4 w-4 rounded border-indigo-400 text-indigo-800 focus:ring-indigo-200"
+											/>
+											<label
+												for="terms"
+												class="text-sm text-gray-300"
+											>
+												I agree to the{" "}
+												<a
+													href="#"
+													class="text-indigo-800 underline hover:text-indigo-900"
+												>
+													Terms of Service
+												</a>{" "}
+												and{" "}
+												<a
+													href="#"
+													class="text-indigo-800 underline hover:text-indigo-900"
+												>
+													Privacy Policy
+												</a>
+											</label>
+										</div>
+
+										<div class="flex justify-center pt-4">
+											<button
+												type="submit"
+												class="inline-flex items-center justify-center rounded-lg border border-indigo-900 bg-indigo-800 px-8 py-3 text-base font-medium text-white shadow-sm transition-colors hover:bg-indigo-900 focus:ring-2 focus:ring-indigo-200 focus:ring-offset-2 focus:outline-none"
+											>
+												Submit Application
+											</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
