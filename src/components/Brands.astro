@@ -1,67 +1,63 @@
 ---
-import { Image } from "astro:assets";
-const brands = import.meta.glob<{ default: ImageMetadata }>(
-	"/src/icons/brands/*.{jpeg,jpg,png,gif,svg}",
-);
+const brands = [
+	"PlayStation",
+	"Apple",
+	"Sony",
+	"Microsoft",
+	"Samsung",
+	"LG",
+	"Nintendo",
+	"Bose",
+	"JBL",
+	"HP",
+	"Lenovo",
+	"Dell",
+	"Canon",
+	"Philips",
+	"Logitech",
+	"Panasonic",
+];
 ---
 
 <section class="py-10 pt-8 pb-4 text-white lg:pt-72">
-	<p
-		class="relative mt-6 text-center text-lg leading-8 font-medium text-white sm:max-w-md lg:max-w-none"
-	>
-		Our portfolio includes market leaders such as:
-	</p>
+	<div class="w-full flex justify-center">
+		<h2
+			class="mt-6 text-2xl leading-8 font-bold text-gradient-purple-glow"
+		>
+			Brands We Stock
+		</h2>
+	</div>
 	<div
 		class="logos group relative overflow-hidden py-10 whitespace-nowrap lg:pt-12 lg:pb-24"
-		style="mask-image: linear-gradient(to right, transparent 0px, white 128px, black calc(100% - 128px), transparent 100%);"
+		style="mask-image: linear-gradient(to right, transparent 0px, white 128px, white calc(100% - 128px), transparent 100%);"
 	>
 		<div
 			class="group-hover:animation-pause animate-slide-left-infinite inline-block w-max"
 		>
 			<div class="flex items-center">
-				<!-- Ensure that the images cover entire screen width for a smooth transition -->
 				{
-					Object.keys(brands).map(async (image) => {
-						const src = (await brands[image]()).default;
-						return (
-							<div class="flex h-11 w-auto items-center px-16">
-								<Image
-									src={src}
-									alt={
-										image.split("/")[3].split(".")[0] +
-										" logo"
-									}
-									class="max-h-full max-w-full object-contain"
-									style="height: auto; width: auto; max-height: 44px;"
-								/>
-							</div>
-						);
-					})
+					brands.map((brand) => (
+						<div class="flex h-11 w-auto items-center px-10 lg:px-16">
+							<span class="text-xl lg:text-2xl font-bold text-white/80 tracking-wide">
+								{brand}
+							</span>
+						</div>
+					))
 				}
 			</div>
 		</div>
-		<!-- Duplicate of the above for infinite effect (you can use javascript to duplicate this too) -->
 		<div
 			class="group-hover:animation-pause animate-slide-left-infinite inline-block w-max"
 		>
 			<div class="flex items-center">
 				{
-					Object.keys(brands).map(async (image) => {
-						const src = (await brands[image]()).default;
-						return (
-							<div class="flex h-11 w-auto items-center px-16">
-								<Image
-									src={src}
-									alt={
-										image.split("/")[3].split(".")[0] +
-										" logo"
-									}
-									class="max-h-full max-w-full object-contain"
-									style="height: auto; width: auto; max-height: 44px;"
-								/>
-							</div>
-						);
-					})
+					brands.map((brand) => (
+						<div class="flex h-11 w-auto items-center px-10 lg:px-16">
+							<span class="text-xl lg:text-2xl font-bold text-white/80 tracking-wide">
+								{brand}
+							</span>
+						</div>
+					))
 				}
 			</div>
 		</div>

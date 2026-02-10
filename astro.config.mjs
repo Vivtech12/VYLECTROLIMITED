@@ -11,7 +11,7 @@ export default defineConfig({
 			tailwindcss(),
 		  ],
 	},
-	site: "https://rstradesleedsltd.com",
+	site: "https://vylectrolimited.co.uk",
 	integrations: [icon(), sitemap()],
 	experimental: {
 		fonts: [
@@ -35,4 +35,4 @@ export default defineConfig({
 			}
 		]
 	}
-});																																																																													
+});
