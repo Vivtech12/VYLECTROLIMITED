@@ -45,10 +45,10 @@ import { Image } from "astro:assets";
 						Company Information
 					</h2>
 					<div class="space-y-3 font-medium">
-						<!-- <div class="flex items-center gap-3">
-							<Icon name="receipt" class="h-5 w-5 text-indigo-600" />
-							<span class="text-neutral-400">VAT number: {companyInfo.vatNumber}</span>
-						</div> -->
+						<div class="flex items-center gap-3">
+							<Icon name="address" class="h-5 w-5 text-indigo-600" />
+							<span class="text-neutral-400">{companyInfo.address}</span>
+						</div>
 
 						<div class="flex items-center gap-3">
 							<Icon
@@ -63,7 +63,7 @@ import { Image } from "astro:assets";
 							</a>
 						</div>
 
-						<!-- <div class="flex items-center gap-3">
+						<div class="flex items-center gap-3">
 							<Icon name="email" class="h-5 w-5 text-indigo-600" />
 							<a
 								href={`mailto:${companyInfo.email}`}
@@ -71,51 +71,22 @@ import { Image } from "astro:assets";
 							>
 								{companyInfo.email}
 							</a>
-						</div> -->
+						</div>
+
+						<div class="flex items-center gap-3">
+							<Icon name="building" class="h-5 w-5 text-indigo-600" />
+							<span class="text-neutral-400">Company No: {companyInfo.companyNumber}</span>
+						</div>
+
+						<div class="flex items-center gap-3">
+							<Icon name="receipt" class="h-5 w-5 text-indigo-600" />
+							<span class="text-neutral-400">VAT No: {companyInfo.vatNumber}</span>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<ul
-				class="mt-12 flex flex-wrap justify-center gap-6 font-medium md:gap-8 lg:mt-0 lg:justify-end lg:gap-12"
-			>
-				<li>
-					<a
-						class="text-neutral-400 transition hover:text-neutral-400/75"
-						href="/#about"
-					>
-						About
-					</a>
-				</li>
-
-				<li>
-					<a
-						class="text-neutral-400 transition hover:text-neutral-400/75"
-						href="/#testimonials"
-					>
-						Testimonials
-					</a>
-				</li>
-
-				<li>
-					<a
-						class="text-neutral-400 transition hover:text-neutral-400/75"
-						href="/contact"
-					>
-						Contact
-					</a>
-				</li>
-
-				<li>
-					<a
-						class="text-neutral-400 transition hover:text-neutral-400/75"
-						href="/signup"
-					>
-						Sign Up
-					</a>
-				</li>
-			</ul>
-		</div>
+			</div>
 
 		<p
 			class="m-0! mt-12 pt-12 text-center text-sm! text-gray-500 lg:text-right"

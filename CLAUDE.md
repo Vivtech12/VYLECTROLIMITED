@@ -1,4 +1,4 @@
-# RS Leeds Project
+# Vylectro Limited Project
 
 This is an Astro project with Tailwind CSS and TypeScript.
 

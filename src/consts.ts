@@ -5,6 +5,10 @@ export const SITE_TITLE = "Vylectro Limited is a trusted name in the wholesale a
 export const SITE_DESCRIPTION =
 	"We offer a diverse range of high-quality electronic products to both businesses and individual customers across the UK and beyond. Our commitment lies in providing dependable service, competitive pricing, and cultivating strong partnerships with leading global brands.";
 export const companyInfo = {
-	name: "Vylectro Limited",
+	name: "VYLECTRO LIMITED",
 	phone: "07360670597",
+	email: "info@vylectrolimiteduk.com",
+	address: "12 Waldo Road, London, England, NW10 6AT",
+	companyNumber: "15905304",
+	vatNumber: "GB497335351",
 };
