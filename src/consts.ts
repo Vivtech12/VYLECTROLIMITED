@@ -8,7 +8,7 @@ export const companyInfo = {
 	name: "VYLECTRO LIMITED",
 	phone: "07360670597",
 	email: "info@vylectrolimiteduk.com",
-	address: "12 Waldo Road, London, England, NW10 6AT",
+	address: "85 Greatorex St, London, E1 5NF",
 	companyNumber: "15905304",
 	vatNumber: "GB497335351",
 };
